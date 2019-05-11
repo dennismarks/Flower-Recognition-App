@@ -13,9 +13,11 @@
 		84F28BD022864A92009A6598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F28BCF22864A92009A6598 /* Assets.xcassets */; };
 		84F28BD322864A92009A6598 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F28BD122864A92009A6598 /* LaunchScreen.storyboard */; };
 		84F28BDB22864AB1009A6598 /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 84F28BDA22864AB1009A6598 /* FlowerClassifier.mlmodel */; };
+		8660C57548DE6EC8CE8CDB5D /* Pods_Flower_Recognition_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21845B1F1E4DC5E530DFF4A /* Pods_Flower_Recognition_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29813F613F07F4FE79009C4F /* Pods-Flower Recognition App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flower Recognition App.debug.xcconfig"; path = "Target Support Files/Pods-Flower Recognition App/Pods-Flower Recognition App.debug.xcconfig"; sourceTree = "<group>"; };
 		84F28BC522864A91009A6598 /* Flower Recognition App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flower Recognition App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F28BC822864A91009A6598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F28BCA22864A91009A6598 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		84F28BD222864A92009A6598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84F28BD422864A92009A6598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F28BDA22864AB1009A6598 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
+		E21845B1F1E4DC5E530DFF4A /* Pods_Flower_Recognition_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flower_Recognition_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6A7F64E85335D6BE9D48BEB /* Pods-Flower Recognition App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flower Recognition App.release.xcconfig"; path = "Target Support Files/Pods-Flower Recognition App/Pods-Flower Recognition App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8660C57548DE6EC8CE8CDB5D /* Pods_Flower_Recognition_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				84F28BC722864A91009A6598 /* Flower Recognition App */,
 				84F28BC622864A91009A6598 /* Products */,
+				8CCB33C984CC2216720136C6 /* Pods */,
+				8D1EC4EB52F77E01A240B19D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = "Flower Recognition App";
 			sourceTree = "<group>";
 		};
+		8CCB33C984CC2216720136C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29813F613F07F4FE79009C4F /* Pods-Flower Recognition App.debug.xcconfig */,
+				F6A7F64E85335D6BE9D48BEB /* Pods-Flower Recognition App.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8D1EC4EB52F77E01A240B19D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E21845B1F1E4DC5E530DFF4A /* Pods_Flower_Recognition_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84F28BD722864A92009A6598 /* Build configuration list for PBXNativeTarget "Flower Recognition App" */;
 			buildPhases = (
+				5ADAEB3F228074223E968043 /* [CP] Check Pods Manifest.lock */,
 				84F28BC122864A91009A6598 /* Sources */,
 				84F28BC222864A91009A6598 /* Frameworks */,
 				84F28BC322864A91009A6598 /* Resources */,
+				1E55BD6CE8D56312FFDA5CF1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E55BD6CE8D56312FFDA5CF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flower Recognition App/Pods-Flower Recognition App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flower Recognition App/Pods-Flower Recognition App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5ADAEB3F228074223E968043 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flower Recognition App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84F28BC122864A91009A6598 /* Sources */ = {
@@ -284,11 +359,13 @@
 		};
 		84F28BD822864A92009A6598 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29813F613F07F4FE79009C4F /* Pods-Flower Recognition App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3AFUDZWC67;
 				INFOPLIST_FILE = "Flower Recognition App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,11 +379,13 @@
 		};
 		84F28BD922864A92009A6598 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6A7F64E85335D6BE9D48BEB /* Pods-Flower Recognition App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3AFUDZWC67;
 				INFOPLIST_FILE = "Flower Recognition App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -9,9 +9,12 @@
 import UIKit
 import CoreML
 import Vision
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let wikipediaURl = "https://en.wikipedia.org/w/api.php"
     let imagePicker =  UIImagePickerController()
 
     @IBOutlet weak var imageView: UIImageView!
@@ -38,14 +41,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func detect(image: CIImage) {
-        // vncoremlmodel - comes from the vision framework; allows us to perform an image analysisn request that uses our coreml model to process images
         guard let model = try? VNCoreMLModel(for: FlowerClassifier().model) else {fatalError("loading coreML model failed")}
         let requst = VNCoreMLRequest(model: model) { (request, error) in
             guard let result = request.results?.first as? VNClassificationObservation else {fatalError("model failed to proccess image")}
             self.navigationItem.title = result.identifier.capitalized
+            self.getFlowerData(flowerName: result.identifier)
         }
-        
-        // perfrom request
+
         let handler = VNImageRequestHandler(ciImage: image)
         do {
             try handler.perform([requst])
@@ -53,5 +55,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print(error)
         }
     }
-}
+    
+    func getFlowerData(flowerName: String) {
+        let parameters : [String:String] = [
+            "format" : "json",
+            "action" : "query",
+            "prop" : "extracts",
+            "exintro" : "",
+            "explaintext" : "",
+            "titles" : flowerName,
+            "indexpageids" : "",
+            "redirects" : "1",
+        ]
+        
+        Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
+            if response.result.isSuccess {
+                print("Got flower's informations")
+                print(response)
+            } else {
+                print("Error: " + String(describing: response.result.error))
+            }
+        }
+    }
 
+}
