@@ -16,13 +16,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let wikipediaURl = "https://en.wikipedia.org/w/api.php"
     let imagePicker =  UIImagePickerController()
-
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .camera
+        imageView.layer.cornerRadius = 35
     } 
 
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
@@ -72,10 +74,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if response.result.isSuccess {
                 print("Got flower's informations")
                 print(response)
+                let flower: JSON = JSON(response.result.value!)
+                let pageID = flower["query"]["pageids"][0].stringValue
+                let flowerDescription = flower["query"]["pages"][pageID]["extract"].stringValue
+                print("*************\n")
+                print(flowerDescription)
+                self.label.text = flowerDescription
             } else {
                 print("Error: " + String(describing: response.result.error))
             }
         }
     }
-
+    
 }
+
