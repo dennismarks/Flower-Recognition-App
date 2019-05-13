@@ -5,5 +5,6 @@ target 'Flower Recognition App' do
 
     pod 'SwiftyJSON'
     pod 'Alamofire'
+    pod 'SDWebImage'
 
 end

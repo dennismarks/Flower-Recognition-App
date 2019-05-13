@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B2FA5B7E134E847A30761843D1BE9F7"
+               BlueprintIdentifier = "B3D7679E77F0814C8E7A1C3969F21530"
                BuildableName = "Pods_Flower_Recognition_App.framework"
                BlueprintName = "Pods-Flower Recognition App"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B2FA5B7E134E847A30761843D1BE9F7"
+            BlueprintIdentifier = "B3D7679E77F0814C8E7A1C3969F21530"
             BuildableName = "Pods_Flower_Recognition_App.framework"
             BlueprintName = "Pods-Flower Recognition App"
             ReferencedContainer = "container:Pods.xcodeproj">

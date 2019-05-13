@@ -11,13 +11,14 @@ import CoreML
 import Vision
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let wikipediaURl = "https://en.wikipedia.org/w/api.php"
     let imagePicker =  UIImagePickerController()
-    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,12 +63,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let parameters : [String:String] = [
             "format" : "json",
             "action" : "query",
-            "prop" : "extracts",
+            "prop" : "extracts|pageimages",
             "exintro" : "",
             "explaintext" : "",
             "titles" : flowerName,
             "indexpageids" : "",
             "redirects" : "1",
+            "pithumbsize" : "800"
         ]
         
         Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
@@ -76,10 +78,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print(response)
                 let flower: JSON = JSON(response.result.value!)
                 let pageID = flower["query"]["pageids"][0].stringValue
+                let flowerImage = flower["query"]["pages"][pageID]["thumbnail"]["source"].stringValue
                 let flowerDescription = flower["query"]["pages"][pageID]["extract"].stringValue
-                print("*************\n")
-                print(flowerDescription)
                 self.label.text = flowerDescription
+//                print("********")
+//                print(flowerImage)
+//                if !flowerImage.isEmpty {
+//                    self.imageView.sd_setImage(with: URL(string: flowerImage))
+//                }
             } else {
                 print("Error: " + String(describing: response.result.error))
             }
